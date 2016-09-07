@@ -1,6 +1,6 @@
 package com.rupert.learning.romannumerals;
 
-public class ToRomanNumerals 
+public class RomanNumerals 
 {
     public int ToRomanNumeralsTransformer( String RomanNumerals )
     {

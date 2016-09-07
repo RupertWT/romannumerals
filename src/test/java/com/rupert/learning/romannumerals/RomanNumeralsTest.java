@@ -4,9 +4,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class ToRomanNumeralsTest {
+public class RomanNumeralsTest {
 	
-	ToRomanNumerals trn = new ToRomanNumerals();
+	RomanNumerals trn = new RomanNumerals();
    
 	@Test
     public void I_Returns_One() {
