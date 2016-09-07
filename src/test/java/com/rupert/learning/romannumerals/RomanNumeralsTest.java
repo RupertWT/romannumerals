@@ -45,9 +45,7 @@ public class RomanNumeralsTest {
     public void M_Returns_One_Thousand() {
         assertEquals(1000, rn.fromRomanNumeralsTransformer("M"));   
     }
-	
-	
-	
+		
 //	Basic adding of character values
 	
 	@Test
@@ -70,7 +68,6 @@ public class RomanNumeralsTest {
         assertEquals(16, rn.fromRomanNumeralsTransformer("XVI"));   
     }
 	
-
 //	Subtraction and complex of character values	
 	
 	@Test
