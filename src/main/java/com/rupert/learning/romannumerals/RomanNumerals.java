@@ -26,17 +26,18 @@ public class RomanNumerals {
 	public int fromRomanNumeralsTransformer( String RomanNumerals ) {
 		
 		int Answer = 0;
-		int firstNumber = 0;
-		int secondNumber = 0;
 				
     	for (int i = 0; i < RomanNumerals.length(); i++) {
     		
-    		if (i != RomanNumerals.length()-1) {	    		
-	    		firstNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i, i+1));
-	    		secondNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i+1, i+2));    	
+    		int firstNumber = 0;
+    		int secondNumber = 0;
+    		
+    		if (lastCharacterInRomanNumeralsString(RomanNumerals, i)) {	    		
+    			firstNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i));   
     		} else { 			
-    			firstNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i));   			
-    		}
+    			firstNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i, i+1));
+	    		secondNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i+1, i+2));    	
+	    	}
 	    	
 	    	if (firstNumber < secondNumber) {			  		
 	    		Answer += secondNumber - firstNumber;	
@@ -50,5 +51,9 @@ public class RomanNumerals {
     	return Answer;
     	
     }
+
+	private boolean lastCharacterInRomanNumeralsString(String RomanNumerals, int i) {
+		return i >= RomanNumerals.length()-1;
+	}
     
 }
