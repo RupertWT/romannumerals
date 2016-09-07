@@ -79,5 +79,10 @@ public class RomanNumeralsTest {
         assertEquals(4, rn.fromRomanNumeralsTransformer("IV"));   
     }
 	
+	@Test
+    public void XIV_Returns_Fourteen() {
+        assertEquals(14, rn.fromRomanNumeralsTransformer("XIV"));   
+    }
+	
 	
 }
