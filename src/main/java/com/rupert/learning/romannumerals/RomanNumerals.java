@@ -2,7 +2,7 @@ package com.rupert.learning.romannumerals;
 
 public class RomanNumerals 
 {
-    public int ToRomanNumeralsTransformer( String RomanNumerals )
+    public int fromRomanNumeralsTransformer( String RomanNumerals )
     {
     	    	
     	if (RomanNumerals.equals("V")) {
