@@ -31,19 +31,18 @@ public class RomanNumeralsTest {
         assertEquals(50, rn.fromRomanNumeralsTransformer("L"));   
     }
 	
-	
 	@Test
-    public void C_Returns_OneHundred() {
+    public void C_Returns_One_Hundred() {
         assertEquals(100, rn.fromRomanNumeralsTransformer("C"));   
     }
 	
 	@Test
-    public void D_Returns_FiveHundred() {
+    public void D_Returns_Five_Hundred() {
         assertEquals(500, rn.fromRomanNumeralsTransformer("D"));   
     }
 	
 	@Test
-    public void M_Returns_OneThousand() {
+    public void M_Returns_One_Thousand() {
         assertEquals(1000, rn.fromRomanNumeralsTransformer("M"));   
     }
 	
@@ -72,7 +71,7 @@ public class RomanNumeralsTest {
     }
 	
 
-//	Subtraction of character values	
+//	Subtraction and complex of character values	
 	
 	@Test
     public void IV_Returns_Four() {
@@ -82,6 +81,16 @@ public class RomanNumeralsTest {
 	@Test
     public void XIV_Returns_Fourteen() {
         assertEquals(14, rn.fromRomanNumeralsTransformer("XIV"));   
+    }
+	
+	@Test
+    public void MXLIV_Returns_One_Thousand_And_Forty_Four() {
+        assertEquals(1044, rn.fromRomanNumeralsTransformer("MXLIV"));   
+    }
+	
+	@Test
+    public void MCMLXXXVI_Returns_Nineteen_Eighty_Six() {
+        assertEquals(1986, rn.fromRomanNumeralsTransformer("MCMLXXXVI"));   
     }
 	
 	

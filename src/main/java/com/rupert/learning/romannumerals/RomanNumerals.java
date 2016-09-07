@@ -5,6 +5,8 @@ import java.util.Hashtable;
 
 public class RomanNumerals {
 	
+	public Dictionary<String, Integer> arabicToRomanDictionary = arabicToRomanDictionary();
+	
 	private Dictionary<String, Integer> arabicToRomanDictionary() {
 		
 		Dictionary<String, Integer> arabicToRomanDictionary = new Hashtable<String, Integer>();
@@ -18,25 +20,30 @@ public class RomanNumerals {
 		arabicToRomanDictionary.put("M", 1000);
 		
 	    return arabicToRomanDictionary;
+	  
 	}
 	
-	
 	public int fromRomanNumeralsTransformer( String RomanNumerals ) {
-
-		Dictionary<String, Integer> arabicToRomanDictionary = arabicToRomanDictionary();
+		
 		int Answer = 0;
-    	
+		int firstNumber = 0;
+		int secondNumber = 0;
+				
     	for (int i = 0; i < RomanNumerals.length(); i++) {
     		
-    	if (i != RomanNumerals.length()-1) {
-    		
-    		if (arabicToRomanDictionary.get(RomanNumerals.substring(i, i+1))  < arabicToRomanDictionary.get(RomanNumerals.substring(i+1, i+2))) {			
-    			Answer += arabicToRomanDictionary.get(RomanNumerals.substring(i+1, i+2)) - arabicToRomanDictionary.get(RomanNumerals.substring(i, i+1));
-    			break;			
+    		if (i != RomanNumerals.length()-1) {	    		
+	    		firstNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i, i+1));
+	    		secondNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i+1, i+2));    	
+    		} else { 			
+    			firstNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i));   			
     		}
-    		
-    	}
-   			Answer += arabicToRomanDictionary.get(RomanNumerals.substring(i, i+1));
+	    	
+	    	if (firstNumber < secondNumber) {			  		
+	    		Answer += secondNumber - firstNumber;	
+	    		i++;
+	    	} else {
+	    		Answer += firstNumber;
+	    	}
    			
     	}
  
