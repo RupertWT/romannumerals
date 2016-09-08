@@ -3,8 +3,8 @@ package com.rupert.learning.romannumerals;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-public class RomanNumerals {
-	
+public class fromRomanNumerals {
+
 	public Dictionary<String, Integer> arabicToRomanDictionary = arabicToRomanDictionary();
 	
 	private Dictionary<String, Integer> arabicToRomanDictionary() {
@@ -55,5 +55,5 @@ public class RomanNumerals {
 	private boolean lastCharacterInRomanNumeralsString(String RomanNumerals, int i) {
 		return i >= RomanNumerals.length()-1;
 	}
-    
+	
 }
