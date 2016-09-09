@@ -40,7 +40,7 @@ public class fromRomanNumerals {
 	    	}
 	    	
 	    	if (firstNumber < secondNumber) {			  		
-	    		Answer += secondNumber - firstNumber;	
+	    		Answer += (secondNumber - firstNumber);	
 	    		i++;
 	    	} else {
 	    		Answer += firstNumber;
