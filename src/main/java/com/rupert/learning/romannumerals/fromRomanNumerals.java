@@ -5,21 +5,21 @@ import java.util.Hashtable;
 
 public class fromRomanNumerals {
 
-	public Dictionary<String, Integer> arabicToRomanDictionary = arabicToRomanDictionary();
+	public Dictionary<String, Integer> fromRomanDictionary = fromRomanDictionary();
 	
-	private Dictionary<String, Integer> arabicToRomanDictionary() {
+	private Dictionary<String, Integer> fromRomanDictionary() {
 		
-		Dictionary<String, Integer> arabicToRomanDictionary = new Hashtable<String, Integer>();
+		Dictionary<String, Integer> fromRomanDictionary = new Hashtable<String, Integer>();
 	   
-		arabicToRomanDictionary.put("I", 1);
-		arabicToRomanDictionary.put("V", 5);
-		arabicToRomanDictionary.put("X", 10);
-		arabicToRomanDictionary.put("L", 50);
-		arabicToRomanDictionary.put("C", 100);
-		arabicToRomanDictionary.put("D", 500);
-		arabicToRomanDictionary.put("M", 1000);
+		fromRomanDictionary.put("I", 1);
+		fromRomanDictionary.put("V", 5);
+		fromRomanDictionary.put("X", 10);
+		fromRomanDictionary.put("L", 50);
+		fromRomanDictionary.put("C", 100);
+		fromRomanDictionary.put("D", 500);
+		fromRomanDictionary.put("M", 1000);
 		
-	    return arabicToRomanDictionary;
+	    return fromRomanDictionary;
 	  
 	}
 	
@@ -33,10 +33,10 @@ public class fromRomanNumerals {
     		int secondNumber = 0;
     		
     		if (lastCharacterInRomanNumeralsString(RomanNumerals, i)) {	    		
-    			firstNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i));   
+    			firstNumber = fromRomanDictionary.get(RomanNumerals.substring(i));   
     		} else { 			
-    			firstNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i, i+1));
-	    		secondNumber = arabicToRomanDictionary.get(RomanNumerals.substring(i+1, i+2));    	
+    			firstNumber = fromRomanDictionary.get(RomanNumerals.substring(i, i+1));
+	    		secondNumber = fromRomanDictionary.get(RomanNumerals.substring(i+1, i+2));    	
 	    	}
 	    	
 	    	if (firstNumber < secondNumber) {			  		
