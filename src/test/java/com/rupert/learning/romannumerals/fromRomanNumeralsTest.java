@@ -24,8 +24,7 @@ public class fromRomanNumeralsTest {
     public void X_Returns_Ten() {
         assertEquals(10, rn.fromRomanNumeralsTransformer("X"));   
     }
-	
-	
+		
 	@Test
     public void L_Returns_Fifty() {
         assertEquals(50, rn.fromRomanNumeralsTransformer("L"));   
