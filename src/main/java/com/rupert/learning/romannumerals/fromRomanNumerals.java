@@ -1,27 +1,6 @@
 package com.rupert.learning.romannumerals;
 
-import java.util.Dictionary;
-import java.util.Hashtable;
-
 public class fromRomanNumerals {
-
-	public Dictionary<String, Integer> fromRomanDictionary = fromRomanDictionary();
-	
-	private Dictionary<String, Integer> fromRomanDictionary() {
-		
-		Dictionary<String, Integer> fromRomanDictionary = new Hashtable<String, Integer>();
-	   
-		fromRomanDictionary.put("I", 1);
-		fromRomanDictionary.put("V", 5);
-		fromRomanDictionary.put("X", 10);
-		fromRomanDictionary.put("L", 50);
-		fromRomanDictionary.put("C", 100);
-		fromRomanDictionary.put("D", 500);
-		fromRomanDictionary.put("M", 1000);
-		
-	    return fromRomanDictionary;
-	  
-	}
 	
 	public int fromRomanNumeralsTransformer( String RomanNumerals ) {
 		
@@ -33,10 +12,10 @@ public class fromRomanNumerals {
     		int secondNumber = 0;
     		
     		if (lastCharacterInRomanNumeralsString(RomanNumerals, i)) {	    		
-    			firstNumber = fromRomanDictionary.get(RomanNumerals.substring(i));   
+    			firstNumber = lookup.romanToDecimal(RomanNumerals.substring(i));   
     		} else { 			
-    			firstNumber = fromRomanDictionary.get(RomanNumerals.substring(i, i+1));
-	    		secondNumber = fromRomanDictionary.get(RomanNumerals.substring(i+1, i+2));    	
+    			firstNumber = lookup.romanToDecimal(RomanNumerals.substring(i, i+1));
+	    		secondNumber = lookup.romanToDecimal(RomanNumerals.substring(i+1, i+2));    	
 	    	}
 	    	
 	    	if (firstNumber < secondNumber) {			  		
