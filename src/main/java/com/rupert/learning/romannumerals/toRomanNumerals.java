@@ -28,9 +28,30 @@ public class toRomanNumerals {
 		if (fromDecimalDictionary.get(arabicNumbers) != null) {
 			return fromDecimalDictionary.get(arabicNumbers);
 		}
-			
-		return "II";
-	   	
+		
+		String Answer = "";
+		
+		for (int i = 0; i < arabicNumbers; i++) {
+			Answer += "I";			
+		}
+	   	return Answer;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
