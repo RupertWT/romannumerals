@@ -4,20 +4,24 @@ public class toRomanNumerals {
 	
 	public String toRomanNumeralsTransformer( int arabicNumbers ) {
 		
-		switch(arabicNumbers) {
-			case 5:
-				return "V";
-			case 4:
-				return "IV";
-			default:
-				String Answer = "";
-				
-				for (int i = 1; i <= arabicNumbers; i++) {
-					Answer += "I";
-				}
-				
-				return Answer;		
+		String Answer = "";
+		
+		if (arabicNumbers > 3 && arabicNumbers % 5 <= 1) {
+			if (arabicNumbers == 5) {
+				Answer += "V";
+			}
+			if (arabicNumbers - 5 < 0) {
+				return Answer + "I"; 
+			}
+			return "I" + Answer;
+			
 		}
+				
+		for (int i = 1; i <= arabicNumbers; i++) {
+			Answer += "I";
+		}
+				
+		return Answer;		
 	   	
     }
 

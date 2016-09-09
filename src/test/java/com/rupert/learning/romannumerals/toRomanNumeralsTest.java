@@ -33,4 +33,9 @@ public class toRomanNumeralsTest {
         assertEquals("V", rn.toRomanNumeralsTransformer(5));   
     }
 	
+	@Test
+    public void Six_Returns_VI() {
+        assertEquals("VI", rn.toRomanNumeralsTransformer(6));   
+    }
+	
 }
