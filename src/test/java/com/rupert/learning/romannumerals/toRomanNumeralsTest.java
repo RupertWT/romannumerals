@@ -62,4 +62,14 @@ public class toRomanNumeralsTest {
         assertEquals("VI", trn.toRomanNumeralsTransformer(6));   
     }
 	
+	@Test
+    public void Eleven_Returns_XI() {
+        assertEquals("XI", trn.toRomanNumeralsTransformer(11));   
+    }
+	
+	@Test
+    public void Twenty_Returns_XX() {
+        assertEquals("XX", trn.toRomanNumeralsTransformer(20));   
+    }
+	
 }

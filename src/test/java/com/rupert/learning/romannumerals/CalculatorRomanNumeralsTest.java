@@ -6,11 +6,11 @@ import org.junit.Test;
 
 public class CalculatorRomanNumeralsTest {
 	
-	CalculatorRomanNumerals crn = new CalculatorRomanNumerals();
+	CalculatorRomanNumerals calc = new CalculatorRomanNumerals();
 	
-//	@Test
-//    public void I_Returns_One() {
-//        assertEquals(1, rn.fromRomanNumeralsTransformer("I"));   
-//    }
+	@Test
+    public void blank_Test() {
+        assertEquals("", calc.Calculator(""));   
+    }
 
 }
