@@ -4,31 +4,27 @@ public class toRomanNumerals {
 	
 	public String toRomanNumeralsTransformer( int decimalNumbers ) {
 
-		if (directRomanNumeralEquivalent(decimalNumbers)) {
-			return lookup.decimalToRoman(decimalNumbers);
-		}
-		
 		String Answer = "";
+		
+		int[] equivalentValue = new int[7];
+		equivalentValue[0] = 1000;
+		equivalentValue[1] = 500;
+		equivalentValue[2] = 100;
+		equivalentValue[3] = 50;
+		equivalentValue[4] = 10;
+		equivalentValue[5] = 5;
+		equivalentValue[6] = 1;
+		
+		
+		for (int i = 0; i <= 6; i++) {
+			for (int j = decimalNumbers; j >= equivalentValue[i]; j -= equivalentValue[i]) {
+				Answer += lookup.decimalToRoman(equivalentValue[i]);
+				decimalNumbers -= equivalentValue[i];
+			}
+		}
 
-		if (decimalNumbers >= 10 && decimalNumbers % 10 != 0) {
-			Answer += "X";
-			decimalNumbers -= 10;
-		}
-		
-		if (decimalNumbers >= 5 && decimalNumbers % 5 != 0) {
-			Answer += "V";
-			decimalNumbers -= 5;
-		}
-		
-		for (int i = 0; i < decimalNumbers; i++) {
-			Answer += "I";			
-		}
 	   	return Answer;
     }
-
-	private boolean directRomanNumeralEquivalent(int decimalNumbers) {
-		return lookup.decimalToRoman(decimalNumbers) != null;
-	}
 
 }
 

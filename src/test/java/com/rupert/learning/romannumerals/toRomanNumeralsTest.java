@@ -72,4 +72,24 @@ public class toRomanNumeralsTest {
         assertEquals("XX", trn.toRomanNumeralsTransformer(20));   
     }
 	
+	@Test
+    public void Seventy_Returns_LXX() {
+        assertEquals("LXX", trn.toRomanNumeralsTransformer(70));   
+    }
+	
+	@Test
+    public void One_Hundred_And_Sixty_Returns_CLX() {
+        assertEquals("CLX", trn.toRomanNumeralsTransformer(160));   
+    }
+	
+	@Test
+    public void Six_Hundred_Returns_DC() {
+        assertEquals("DC", trn.toRomanNumeralsTransformer(600));   
+    }
+	
+	@Test
+    public void One_Thousand_Six_Hundred_And_Two_Returns_MDCII() {
+        assertEquals("MDCII", trn.toRomanNumeralsTransformer(1602));   
+    }
+		
 }
