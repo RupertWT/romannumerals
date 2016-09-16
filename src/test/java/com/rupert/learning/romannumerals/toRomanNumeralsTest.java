@@ -92,4 +92,46 @@ public class toRomanNumeralsTest {
         assertEquals("MDCII", trn.toRomanNumeralsTransformer(1602));   
     }
 		
+//	Complex values
+	
+	@Test
+    public void Four_Returns_IV() {
+        assertEquals("IV", trn.toRomanNumeralsTransformer(4));   
+    }
+	
+	@Test
+    public void Nine_Returns_IX() {
+        assertEquals("IX", trn.toRomanNumeralsTransformer(9));   
+    }
+	
+	@Test
+    public void Fourteen_Returns_XIV() {
+        assertEquals("XIV", trn.toRomanNumeralsTransformer(14));   
+    }
+	
+	@Test
+    public void Fourty_Returns_XL() {
+        assertEquals("XL", trn.toRomanNumeralsTransformer(40));   
+    }
+	
+	@Test
+    public void Ninety_Returns_XC() {
+        assertEquals("XC", trn.toRomanNumeralsTransformer(90));   
+    }
+	
+	@Test
+    public void Four_Hundred_Returns_CD() {
+        assertEquals("CD", trn.toRomanNumeralsTransformer(400));   
+    }
+	
+	@Test
+    public void Nine_Hundred_Returns_CM() {
+        assertEquals("CM", trn.toRomanNumeralsTransformer(900));   
+    }
+	
+	@Test
+    public void One_Thousand_Nine_Hundred_And_Ninety_Six_Returns_MCMXCVI() {
+        assertEquals("MCMXCVI", trn.toRomanNumeralsTransformer(1996));   
+    }
+	
 }

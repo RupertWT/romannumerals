@@ -21,11 +21,17 @@ public class lookup {
 			Dictionary<Integer, String> fromDecimalDictionary = new Hashtable<Integer, String>();
 		   
 			fromDecimalDictionary.put(1, "I");
+			fromDecimalDictionary.put(4, "IV");
 			fromDecimalDictionary.put(5, "V");
+			fromDecimalDictionary.put(9, "IX");
 			fromDecimalDictionary.put(10, "X");
+			fromDecimalDictionary.put(40, "XL");
 			fromDecimalDictionary.put(50, "L");
+			fromDecimalDictionary.put(90, "XC");
 			fromDecimalDictionary.put(100, "C");
+			fromDecimalDictionary.put(400, "CD");
 			fromDecimalDictionary.put(500, "D");
+			fromDecimalDictionary.put(900, "CM");
 			fromDecimalDictionary.put(1000, "M");
 			
 			return fromDecimalDictionary;
