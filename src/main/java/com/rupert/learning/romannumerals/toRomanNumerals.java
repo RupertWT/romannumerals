@@ -2,9 +2,7 @@ package com.rupert.learning.romannumerals;
 
 public class toRomanNumerals {
 	
-	public String toRomanNumeralsTransformer( int decimalNumbers ) {
-
-		String Answer = "";
+	public static String toRomanNumeralsTransformer( int decimalNumbers ) {
 		
 		int[] equivalentValue = new int[13];
 		equivalentValue[0] = 1000;
@@ -21,6 +19,7 @@ public class toRomanNumerals {
 		equivalentValue[11] = 4;
 		equivalentValue[12] = 1;
 		
+		String Answer = "";
 		
 		for (int i = 0; i < 13; i++) {
 			for (int j = decimalNumbers; j >= equivalentValue[i]; j -= equivalentValue[i]) {

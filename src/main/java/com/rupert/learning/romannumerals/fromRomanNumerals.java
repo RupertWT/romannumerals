@@ -2,7 +2,7 @@ package com.rupert.learning.romannumerals;
 
 public class fromRomanNumerals {
 	
-	public int fromRomanNumeralsTransformer( String RomanNumerals ) {
+	public static int fromRomanNumeralsTransformer( String RomanNumerals ) {
 		
 		int Answer = 0;
 				
@@ -31,7 +31,7 @@ public class fromRomanNumerals {
     	
     }
 
-	private boolean lastCharacterInRomanNumeralsString(String RomanNumerals, int i) {
+	private static boolean lastCharacterInRomanNumeralsString(String RomanNumerals, int i) {
 		return i >= RomanNumerals.length()-1;
 	}
 	
