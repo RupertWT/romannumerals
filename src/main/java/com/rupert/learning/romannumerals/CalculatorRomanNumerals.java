@@ -4,7 +4,6 @@ public class CalculatorRomanNumerals {
 		
 	public String Calculator(String RomanNumeralInputOne, String RomanNumeralInputTwo, String Operator) {
 		
-		
 		int DecimalInputOne = fromRomanNumerals.fromRomanNumeralsTransformer(RomanNumeralInputOne);
 		checkForExceptions(DecimalInputOne, "first input");
 		
