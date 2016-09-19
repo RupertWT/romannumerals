@@ -5,9 +5,9 @@ public class CalculatorRomanNumerals {
 	public String Calculator(String RomanNumeralInputOne, String RomanNumeralInputTwo, String Operator) {
 		
 		int DecimalInputOne = fromRomanNumerals.fromRomanNumeralsTransformer(RomanNumeralInputOne);
-		checkForExceptions(DecimalInputOne, "first input");
-		
 		int DecimalInputTwo = fromRomanNumerals.fromRomanNumeralsTransformer(RomanNumeralInputTwo);
+		
+		checkForExceptions(DecimalInputOne, "first input");
 		checkForExceptions(DecimalInputTwo, "second input");
 		
 		int Answer = Operator.equals("-") ? (DecimalInputOne - DecimalInputTwo) : (DecimalInputOne + DecimalInputTwo);		
