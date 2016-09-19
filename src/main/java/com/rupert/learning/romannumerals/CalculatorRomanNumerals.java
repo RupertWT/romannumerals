@@ -2,30 +2,30 @@ package com.rupert.learning.romannumerals;
 
 public class CalculatorRomanNumerals {
 		
-	public String Calculator(String RomanNumeralInputOne, String RomanNumeralInputTwo, String Operator) {
+	public String calculator(String romanNumeralInputOne, String romanNumeralInputTwo, String operator) {
 		
-		int DecimalInputOne = fromRomanNumerals.fromRomanNumeralsTransformer(RomanNumeralInputOne);
-		int DecimalInputTwo = fromRomanNumerals.fromRomanNumeralsTransformer(RomanNumeralInputTwo);
+		int decimalInputOne = FromRomanNumerals.fromRomanNumeralsTransformer(romanNumeralInputOne);
+		int decimalInputTwo = FromRomanNumerals.fromRomanNumeralsTransformer(romanNumeralInputTwo);
 		
-		checkForExceptions(DecimalInputOne, "first input");
-		checkForExceptions(DecimalInputTwo, "second input");
+		checkForExceptions(decimalInputOne, "first input");
+		checkForExceptions(decimalInputTwo, "second input");
 		
-		int Answer = Operator.equals("-") ? (DecimalInputOne - DecimalInputTwo) : (DecimalInputOne + DecimalInputTwo);		
-		checkForExceptions(Answer, "answer");
+		int answer = operator.equals("-") ? (decimalInputOne - decimalInputTwo) : (decimalInputOne + decimalInputTwo);		
+		checkForExceptions(answer, "answer");
 		
 	
-		return toRomanNumerals.toRomanNumeralsTransformer(Answer);
+		return ToRomanNumerals.toRomanNumeralsTransformer(answer);
 	
 	}
 
-	private void checkForExceptions(int ValueToBeChecked, String Variable) {
+	private void checkForExceptions(int valueToBeChecked, String description) {
 		
-		if (ValueToBeChecked <= 0) {
-			throw new IllegalArgumentException("The " + Variable + " cannot be <= 0 or empty;");
+		if (valueToBeChecked <= 0) {
+			throw new IllegalArgumentException("The " + description + " cannot be <= 0 or empty;");
 		}
 		
-		if (ValueToBeChecked > 3000) {
-			throw new IllegalArgumentException("The " + Variable + " cannot be > 3000;");
+		if (valueToBeChecked > 3000) {
+			throw new IllegalArgumentException("The " + description + " cannot be > 3000;");
 		}
 	}
 	

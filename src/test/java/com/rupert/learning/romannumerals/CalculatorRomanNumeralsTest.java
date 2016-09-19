@@ -15,59 +15,59 @@ public class CalculatorRomanNumeralsTest {
 	
 	@Test
     public void I_plus_III_equals_IV() {
-        assertEquals("IV", calc.Calculator("I","III","+"));   
+        assertEquals("IV", calc.calculator("I","III","+"));   
     }
 	
 	@Test
     public void I_minus_V_equals_IV() {
-        assertEquals("IV", calc.Calculator("V","I","-"));   
+        assertEquals("IV", calc.calculator("V","I","-"));   
     }
 	
 	@Test
     public void MMII_minus_CDV_equals_MDXCVII() {
-        assertEquals("MDXCVII", calc.Calculator("MMII","CDV","-"));   
+        assertEquals("MDXCVII", calc.calculator("MMII","CDV","-"));   
     }
 	
 	@Test
 	public void Input_One_Less_Than_0_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The first input cannot be <= 0 or empty;");
-		calc.Calculator("","III","+");
+		calc.calculator("","III","+");
 	}
 	
 	@Test
 	public void Input_One_More_Than_3000_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The first input cannot be > 3000;");
-		calc.Calculator("MMMI","III","+");
+		calc.calculator("MMMI","III","+");
 	}
 	
 	@Test
 	public void Input_Two_Less_Than_0_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The second input cannot be <= 0 or empty;");
-		calc.Calculator("I","","+");
+		calc.calculator("I","","+");
 	}
 	
 	@Test
 	public void Input_Two_More_Than_3000_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The second input cannot be > 3000;");
-		calc.Calculator("I","MMMI","+");
+		calc.calculator("I","MMMI","+");
 	}
 	
 	@Test
 	public void Answer_Less_Than_0_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The answer cannot be <= 0 or empty;");
-		calc.Calculator("I","III","-");
+		calc.calculator("I","III","-");
 	}
 	
 	@Test
 	public void Answer_More_Than_3000_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The answer cannot be > 3000;");
-		calc.Calculator("MI","MM","+");
+		calc.calculator("MI","MM","+");
 	}
 	
 }
