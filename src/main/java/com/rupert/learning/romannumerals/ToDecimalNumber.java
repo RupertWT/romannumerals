@@ -1,8 +1,8 @@
 package com.rupert.learning.romannumerals;
 
-public class FromRomanNumerals {
+public class ToDecimalNumber {
 	
-	public static int fromRomanNumeralsTransformer( String romanNumerals ) {
+	public static int toDecimalNumberTransformer( String romanNumerals ) {
 		
 		int resultInDecimals = 0;
 				

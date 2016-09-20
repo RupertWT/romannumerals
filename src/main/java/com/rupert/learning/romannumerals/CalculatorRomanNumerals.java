@@ -4,20 +4,30 @@ public class CalculatorRomanNumerals {
 		
 	public String calculator(String romanNumeralInputOne, String romanNumeralInputTwo, String operator) {
 		
-		int decimalInputOne = FromRomanNumerals.fromRomanNumeralsTransformer(romanNumeralInputOne);
-		int decimalInputTwo = FromRomanNumerals.fromRomanNumeralsTransformer(romanNumeralInputTwo);
+		int decimalInputOne = convertToDecimalNumber(romanNumeralInputOne);
+		int decimalInputTwo = convertToDecimalNumber(romanNumeralInputTwo);
 		
 		checkForExceptions(decimalInputOne, "first input");
 		checkForExceptions(decimalInputTwo, "second input");
 		
 		int answer = operator.equals("-") ? (decimalInputOne - decimalInputTwo) : (decimalInputOne + decimalInputTwo);		
 		checkForExceptions(answer, "answer");
-		
-	
-		return ToRomanNumerals.toRomanNumeralsTransformer(answer);
+			
+		return convertToRomanNumerals(answer);
 	
 	}
 
+	
+	private String convertToRomanNumerals(int decimalNumber) {
+		return ToRomanNumerals.toRomanNumeralsTransformer(decimalNumber);
+	}
+
+	
+	private int convertToDecimalNumber(String romanNumeral) {
+		return ToDecimalNumber.toDecimalNumberTransformer(romanNumeral);
+	}
+
+	
 	private void checkForExceptions(int valueToBeChecked, String description) {
 		
 		if (valueToBeChecked <= 0) {

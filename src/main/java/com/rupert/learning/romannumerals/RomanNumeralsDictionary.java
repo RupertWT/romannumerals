@@ -6,54 +6,54 @@ import java.util.Hashtable;
 public class RomanNumeralsDictionary {
 	
 	public static String decimalToRoman (int i) {
-		return fromDecimalDictionary.get(i);
+		return toRomanNumeralsDictionary.get(i);
 	}
 	
 	public static int romanToDecimal (String s) {
-		return fromRomanDictionary.get(s);
+		return toDecimalNumberDictionary.get(s);
 	}
 	
 	
-	private static Dictionary<Integer, String> fromDecimalDictionary = fromDecimalDictionary();
+	private static Dictionary<Integer, String> toRomanNumeralsDictionary = toRomanDictionary();
 	
-	private static Dictionary<Integer, String> fromDecimalDictionary() {
+	private static Dictionary<Integer, String> toRomanDictionary() {
 			
-			Dictionary<Integer, String> fromDecimalDictionary = new Hashtable<Integer, String>();
+			Dictionary<Integer, String> toRomanDictionary = new Hashtable<Integer, String>();
 		   
-			fromDecimalDictionary.put(1, "I");
-			fromDecimalDictionary.put(4, "IV");
-			fromDecimalDictionary.put(5, "V");
-			fromDecimalDictionary.put(9, "IX");
-			fromDecimalDictionary.put(10, "X");
-			fromDecimalDictionary.put(40, "XL");
-			fromDecimalDictionary.put(50, "L");
-			fromDecimalDictionary.put(90, "XC");
-			fromDecimalDictionary.put(100, "C");
-			fromDecimalDictionary.put(400, "CD");
-			fromDecimalDictionary.put(500, "D");
-			fromDecimalDictionary.put(900, "CM");
-			fromDecimalDictionary.put(1000, "M");
+			toRomanDictionary.put(1, "I");
+			toRomanDictionary.put(4, "IV");
+			toRomanDictionary.put(5, "V");
+			toRomanDictionary.put(9, "IX");
+			toRomanDictionary.put(10, "X");
+			toRomanDictionary.put(40, "XL");
+			toRomanDictionary.put(50, "L");
+			toRomanDictionary.put(90, "XC");
+			toRomanDictionary.put(100, "C");
+			toRomanDictionary.put(400, "CD");
+			toRomanDictionary.put(500, "D");
+			toRomanDictionary.put(900, "CM");
+			toRomanDictionary.put(1000, "M");
 			
-			return fromDecimalDictionary;
+			return toRomanDictionary;
 		  
 	}	
     
 	
-	private static Dictionary<String, Integer> fromRomanDictionary = fromRomanDictionary();
+	private static Dictionary<String, Integer> toDecimalNumberDictionary = toDecimalDictionary();
 	
-	private static Dictionary<String, Integer> fromRomanDictionary() {
+	private static Dictionary<String, Integer> toDecimalDictionary() {
 		
-		Dictionary<String, Integer> fromRomanDictionary = new Hashtable<String, Integer>();
+		Dictionary<String, Integer> toDecimalDictionary = new Hashtable<String, Integer>();
 	   
-		fromRomanDictionary.put("I", 1);
-		fromRomanDictionary.put("V", 5);
-		fromRomanDictionary.put("X", 10);
-		fromRomanDictionary.put("L", 50);
-		fromRomanDictionary.put("C", 100);
-		fromRomanDictionary.put("D", 500);
-		fromRomanDictionary.put("M", 1000);
+		toDecimalDictionary.put("I", 1);
+		toDecimalDictionary.put("V", 5);
+		toDecimalDictionary.put("X", 10);
+		toDecimalDictionary.put("L", 50);
+		toDecimalDictionary.put("C", 100);
+		toDecimalDictionary.put("D", 500);
+		toDecimalDictionary.put("M", 1000);
 		
-	    return fromRomanDictionary;
+	    return toDecimalDictionary;
 	  
 	}
 	
