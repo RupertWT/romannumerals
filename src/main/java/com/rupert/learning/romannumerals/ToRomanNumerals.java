@@ -23,7 +23,7 @@ public class ToRomanNumerals {
 		
 		for (int i = 0; i < 13; i++) {
 			for (int j = decimalNumbers; j >= equivalentValue[i]; j -= equivalentValue[i]) {
-				resultInRomanNumerals += lookup.decimalToRoman(equivalentValue[i]);
+				resultInRomanNumerals += RomanNumeralsDictionary.decimalToRoman(equivalentValue[i]);
 				decimalNumbers -= equivalentValue[i];
 			}
 		}

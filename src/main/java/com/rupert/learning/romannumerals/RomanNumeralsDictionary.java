@@ -3,7 +3,7 @@ package com.rupert.learning.romannumerals;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
-public class lookup {
+public class RomanNumeralsDictionary {
 	
 	public static String decimalToRoman (int i) {
 		return fromDecimalDictionary.get(i);

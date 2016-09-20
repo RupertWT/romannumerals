@@ -12,10 +12,10 @@ public class FromRomanNumerals {
     		int secondNumber = 0;
     		
     		if (lastCharacterInRomanNumeralsString(romanNumerals, i)) {	    		
-    			firstNumber = lookup.romanToDecimal(romanNumerals.substring(i));   
+    			firstNumber = RomanNumeralsDictionary.romanToDecimal(romanNumerals.substring(i));   
     		} else { 			
-    			firstNumber = lookup.romanToDecimal(romanNumerals.substring(i, i+1));
-	    		secondNumber = lookup.romanToDecimal(romanNumerals.substring(i+1, i+2));    	
+    			firstNumber = RomanNumeralsDictionary.romanToDecimal(romanNumerals.substring(i, i+1));
+	    		secondNumber = RomanNumeralsDictionary.romanToDecimal(romanNumerals.substring(i+1, i+2));    	
 	    	}
 	    	
 	    	if (firstNumber < secondNumber) {			  		
