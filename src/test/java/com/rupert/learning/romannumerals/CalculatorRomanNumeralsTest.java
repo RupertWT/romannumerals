@@ -2,6 +2,7 @@ package com.rupert.learning.romannumerals;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -13,10 +14,14 @@ public class CalculatorRomanNumeralsTest {
 	
 	CalculatorRomanNumerals calc = new CalculatorRomanNumerals();
 	
+//	Additions
+	
 	@Test
     public void I_plus_III_equals_IV() {
         assertEquals("IV", calc.calculator("I","III","+"));   
     }
+	
+//	Subtractions
 	
 	@Test
     public void I_minus_V_equals_IV() {
@@ -27,6 +32,13 @@ public class CalculatorRomanNumeralsTest {
     public void MMII_minus_CDV_equals_MDXCVII() {
         assertEquals("MDXCVII", calc.calculator("MMII","CDV","-"));   
     }
+	
+	@Test
+	public void II_times_V_equals_X() {
+        assertEquals("X", calc.calculator("II","V","*"));   
+    }
+	
+//	Exceptions
 	
 	@Test
 	public void Input_One_Less_Than_0_Throw_Exception() {
