@@ -9,10 +9,26 @@ public class CalculatorRomanNumerals {
 		
 		checkForExceptions(decimalInputOne, "first input");
 		checkForExceptions(decimalInputTwo, "second input");
-		
-		int answer = operator.equals("-") ? (decimalInputOne - decimalInputTwo) : (decimalInputOne + decimalInputTwo);		
-		checkForExceptions(answer, "answer");
 			
+		int answer = 0;	
+				
+		switch(operator) {
+			case "-":
+				answer = decimalInputOne - decimalInputTwo;
+				break;
+			case "*":
+				answer = decimalInputOne * decimalInputTwo;
+				break;
+			case "/":
+				answer = decimalInputOne / decimalInputTwo;
+				break;
+			default:
+				answer = decimalInputOne + decimalInputTwo;
+		}
+		
+		System.out.println(answer);
+		
+		checkForExceptions(answer, "answer");
 		return convertToRomanNumerals(answer);
 	
 	}
@@ -37,6 +53,11 @@ public class CalculatorRomanNumerals {
 		if (valueToBeChecked > 3000) {
 			throw new IllegalArgumentException("The " + description + " cannot be > 3000;");
 		}
+		
+//		if (valueToBeChecked != Math.round(valueToBeChecked)) {
+//			throw new IllegalArgumentException("The " + description + " must be a whole number;");
+//		}
+
 	}
 	
 }

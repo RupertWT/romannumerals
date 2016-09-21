@@ -33,9 +33,18 @@ public class CalculatorRomanNumeralsTest {
         assertEquals("MDXCVII", calc.calculator("MMII","CDV","-"));   
     }
 	
+//	Multiplications
+	
 	@Test
 	public void II_times_V_equals_X() {
         assertEquals("X", calc.calculator("II","V","*"));   
+    }
+	
+//	Divisions
+	
+	@Test
+	public void X_divided_V_equals_II() {
+        assertEquals("II", calc.calculator("X","V","/"));   
     }
 	
 //	Exceptions
@@ -81,5 +90,13 @@ public class CalculatorRomanNumeralsTest {
 		thrown.expectMessage("The answer cannot be > 3000;");
 		calc.calculator("MI","MM","+");
 	}
+	
+	@Test
+	public void Answer_Not_An_Integer_Throw_Exception() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("The answer must be a whole number;");
+		calc.calculator("XI","III","/");
+	}
+
 	
 }
