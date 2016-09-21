@@ -2,7 +2,6 @@ package com.rupert.learning.romannumerals;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -95,7 +94,7 @@ public class CalculatorRomanNumeralsTest {
 	public void Answer_Not_An_Integer_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The answer must be a whole number;");
-		calc.calculator("XI","III","/");
+		calc.calculator("XIII","III","/");
 	}
 
 	

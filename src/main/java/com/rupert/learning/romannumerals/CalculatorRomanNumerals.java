@@ -1,38 +1,40 @@
 package com.rupert.learning.romannumerals;
 
 public class CalculatorRomanNumerals {
-		
+	
+	public int DECIMAL_INPUT_ONE = 0;
+	public int DECIMAL_INPUT_TWO = 0;
+	public String OPERATOR = "";
+	
 	public String calculator(String romanNumeralInputOne, String romanNumeralInputTwo, String operator) {
 		
-		int decimalInputOne = convertToDecimalNumber(romanNumeralInputOne);
-		int decimalInputTwo = convertToDecimalNumber(romanNumeralInputTwo);
+		DECIMAL_INPUT_ONE = convertToDecimalNumber(romanNumeralInputOne);
+		DECIMAL_INPUT_TWO = convertToDecimalNumber(romanNumeralInputTwo);
+		OPERATOR = operator;
 		
-		checkForExceptions(decimalInputOne, "first input");
-		checkForExceptions(decimalInputTwo, "second input");
+		checkForExceptions(DECIMAL_INPUT_ONE, "first input");
+		checkForExceptions(DECIMAL_INPUT_TWO, "second input");
 			
 		int answer = 0;	
 				
-		switch(operator) {
+		switch(OPERATOR) {
 			case "-":
-				answer = decimalInputOne - decimalInputTwo;
+				answer = DECIMAL_INPUT_ONE - DECIMAL_INPUT_TWO;
 				break;
 			case "*":
-				answer = decimalInputOne * decimalInputTwo;
+				answer = DECIMAL_INPUT_ONE * DECIMAL_INPUT_TWO;
 				break;
 			case "/":
-				answer = decimalInputOne / decimalInputTwo;
+				answer = DECIMAL_INPUT_ONE / DECIMAL_INPUT_TWO;
 				break;
 			default:
-				answer = decimalInputOne + decimalInputTwo;
-		}
-		
-		System.out.println(answer);
+				answer = DECIMAL_INPUT_ONE + DECIMAL_INPUT_TWO;
+		}		
 		
 		checkForExceptions(answer, "answer");
 		return convertToRomanNumerals(answer);
 	
 	}
-
 	
 	private String convertToRomanNumerals(int decimalNumber) {
 		return ToRomanNumerals.toRomanNumeralsTransformer(decimalNumber);
@@ -54,9 +56,9 @@ public class CalculatorRomanNumerals {
 			throw new IllegalArgumentException("The " + description + " cannot be > 3000;");
 		}
 		
-//		if (valueToBeChecked != Math.round(valueToBeChecked)) {
-//			throw new IllegalArgumentException("The " + description + " must be a whole number;");
-//		}
+		if (OPERATOR.equals("/") && (( ( (float)DECIMAL_INPUT_ONE / (float)DECIMAL_INPUT_TWO) % 1) != 0)) {
+			throw new IllegalArgumentException("The answer must be a whole number;");
+		}
 
 	}
 	
