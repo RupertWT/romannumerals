@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class fromRomanNumeralsTest {
+public class FromRomanNumeralsTest {
 	
 //	fromRomanNumerals frn = new fromRomanNumerals();
   
