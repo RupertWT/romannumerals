@@ -2,19 +2,19 @@ package com.rupert.learning.romannumerals;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class RomanNumeralsDictionary {
 	
 	public static String decimalToRoman (int i) {
 		return toRomanNumeralsDictionary.get(i);
 	}
-	
+
 	
 	public static int romanToDecimal (String s) {
 		return toDecimalNumberDictionary.get(s);
 	}
-	
-    
 	
 	private static HashMap<String,Integer> toDecimalNumberDictionary = toDecimalDictionary();
 	
