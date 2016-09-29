@@ -1,7 +1,7 @@
 package com.rupert.learning.romannumerals;
 
-import java.util.Dictionary;
-import java.util.Hashtable;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class RomanNumeralsDictionary {
 	
@@ -9,16 +9,38 @@ public class RomanNumeralsDictionary {
 		return toRomanNumeralsDictionary.get(i);
 	}
 	
+	
 	public static int romanToDecimal (String s) {
 		return toDecimalNumberDictionary.get(s);
 	}
 	
+    
 	
-	private static Dictionary<Integer, String> toRomanNumeralsDictionary = toRomanDictionary();
+	private static HashMap<String,Integer> toDecimalNumberDictionary = toDecimalDictionary();
 	
-	private static Dictionary<Integer, String> toRomanDictionary() {
+	private static HashMap<String, Integer> toDecimalDictionary() {
+		
+		HashMap<String, Integer> toDecimalDictionary = new LinkedHashMap<String, Integer>();
+	   
+		toDecimalDictionary.put("I", 1);
+		toDecimalDictionary.put("V", 5);
+		toDecimalDictionary.put("X", 10);
+		toDecimalDictionary.put("L", 50);
+		toDecimalDictionary.put("C", 100);
+		toDecimalDictionary.put("D", 500);
+		toDecimalDictionary.put("M", 1000);
+		
+	    return toDecimalDictionary;
+	  
+	}
+	
+	
+	
+	private static HashMap<Integer,String> toRomanNumeralsDictionary = toRomanDictionary();
+	
+	private static HashMap<Integer, String> toRomanDictionary() {
 			
-			Dictionary<Integer, String> toRomanDictionary = new Hashtable<Integer, String>();
+			HashMap<Integer,String> toRomanDictionary = new LinkedHashMap<Integer, String>();
 		   
 			toRomanDictionary.put(1, "I");
 			toRomanDictionary.put(4, "IV");
@@ -37,25 +59,5 @@ public class RomanNumeralsDictionary {
 			return toRomanDictionary;
 		  
 	}	
-    
-	
-	private static Dictionary<String, Integer> toDecimalNumberDictionary = toDecimalDictionary();
-	
-	private static Dictionary<String, Integer> toDecimalDictionary() {
-		
-		Dictionary<String, Integer> toDecimalDictionary = new Hashtable<String, Integer>();
-	   
-		toDecimalDictionary.put("I", 1);
-		toDecimalDictionary.put("V", 5);
-		toDecimalDictionary.put("X", 10);
-		toDecimalDictionary.put("L", 50);
-		toDecimalDictionary.put("C", 100);
-		toDecimalDictionary.put("D", 500);
-		toDecimalDictionary.put("M", 1000);
-		
-	    return toDecimalDictionary;
-	  
-	}
-	
 	
 }
