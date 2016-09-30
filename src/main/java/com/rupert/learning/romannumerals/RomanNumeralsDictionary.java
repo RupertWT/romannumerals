@@ -1,9 +1,9 @@
 package com.rupert.learning.romannumerals;
 
+import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Map.Entry;
 
 public class RomanNumeralsDictionary {
 	
@@ -16,11 +16,11 @@ public class RomanNumeralsDictionary {
 		return toDecimalNumberDictionary.get(s);
 	}
 	
-	private static HashMap<String,Integer> toDecimalNumberDictionary = toDecimalDictionary();
+	private static Dictionary<String,Integer> toDecimalNumberDictionary = toDecimalDictionary();
 	
-	private static HashMap<String, Integer> toDecimalDictionary() {
+	private static Dictionary<String, Integer> toDecimalDictionary() {
 		
-		HashMap<String, Integer> toDecimalDictionary = new LinkedHashMap<String, Integer>();
+		Dictionary<String, Integer> toDecimalDictionary = new Hashtable<String, Integer>();
 	   
 		toDecimalDictionary.put("I", 1);
 		toDecimalDictionary.put("V", 5);
@@ -36,11 +36,11 @@ public class RomanNumeralsDictionary {
 	
 	
 	
-	private static HashMap<Integer,String> toRomanNumeralsDictionary = toRomanDictionary();
+	private static Dictionary<Integer,String> toRomanNumeralsDictionary = toRomanDictionary();
 	
-	private static HashMap<Integer, String> toRomanDictionary() {
+	private static Dictionary<Integer, String> toRomanDictionary() {
 			
-			HashMap<Integer,String> toRomanDictionary = new LinkedHashMap<Integer, String>();
+		Dictionary<Integer,String> toRomanDictionary = new Hashtable<Integer, String>();
 		   
 			toRomanDictionary.put(1, "I");
 			toRomanDictionary.put(4, "IV");

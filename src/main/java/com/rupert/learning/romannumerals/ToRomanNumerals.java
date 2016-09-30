@@ -6,16 +6,16 @@ public class ToRomanNumerals {
 		
 		String resultInRomanNumerals = "";
 
-		int[] knownRomanNumeralDictionaryValues = new int[] {1000,900,500,400,100,90,50,40,10,9,5,4,1};
+		int[] knownRomanNumeralValues = new int[] {1000,900,500,400,100,90,50,40,10,9,5,4,1};
 		
-		for (int i = 0; i < knownRomanNumeralDictionaryValues.length; i++) {
+		for (int i = 0; i < knownRomanNumeralValues.length; i++) {
 			
-			int nextRomanNumeralDictionaryValue = knownRomanNumeralDictionaryValues[i];
+			int nextKnownRomanNumeralValue = knownRomanNumeralValues[i];
 			
-			for (int j = decimalNumbers; j >= nextRomanNumeralDictionaryValue; j -= nextRomanNumeralDictionaryValue) {
+			for (int j = decimalNumbers; j >= nextKnownRomanNumeralValue; j -= nextKnownRomanNumeralValue) {
 				
-				resultInRomanNumerals += RomanNumeralsDictionary.decimalToRoman(nextRomanNumeralDictionaryValue);
-				decimalNumbers -= nextRomanNumeralDictionaryValue;
+				resultInRomanNumerals += RomanNumeralsDictionary.decimalToRoman(nextKnownRomanNumeralValue);
+				decimalNumbers -= nextKnownRomanNumeralValue;
 			
 			}
 			
@@ -25,20 +25,3 @@ public class ToRomanNumerals {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
