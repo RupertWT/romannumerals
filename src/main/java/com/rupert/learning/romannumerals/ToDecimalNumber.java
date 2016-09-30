@@ -11,7 +11,7 @@ public class ToDecimalNumber {
     		int firstNumber = 0;
     		int secondNumber = 0;
     		
-    		if (lastCharacterInRomanNumeralsString(romanNumerals, i)) {	    		
+    		if (isLastCharacterInRomanNumeralsString(romanNumerals, i)) {	    		
     			firstNumber = RomanNumeralsDictionary.romanToDecimal(romanNumerals.substring(i));   
     		} else { 			
     			firstNumber = RomanNumeralsDictionary.romanToDecimal(romanNumerals.substring(i, i+1));
@@ -31,7 +31,7 @@ public class ToDecimalNumber {
     	
     }
 
-	private static boolean lastCharacterInRomanNumeralsString(String romanNumerals, int i) {
+	private static boolean isLastCharacterInRomanNumeralsString(String romanNumerals, int i) {
 		return i == romanNumerals.length()-1;
 	}
 	

@@ -6,15 +6,13 @@ import java.util.Hashtable;
 public class RomanNumeralsDictionary {
 	
 	public static String decimalToRoman (int i) {
-		return toRomanNumeralsDictionary.get(i);
+		return toRomanDictionary().get(i);
 	}
 
 	
 	public static int romanToDecimal (String s) {
-		return toDecimalNumberDictionary.get(s);
+		return toDecimalDictionary().get(s);
 	}
-	
-	private static Dictionary<String,Integer> toDecimalNumberDictionary = toDecimalDictionary();
 	
 	private static Dictionary<String, Integer> toDecimalDictionary() {
 		
@@ -31,10 +29,6 @@ public class RomanNumeralsDictionary {
 	    return toDecimalDictionary;
 	  
 	}
-	
-	
-	
-	private static Dictionary<Integer,String> toRomanNumeralsDictionary = toRomanDictionary();
 	
 	private static Dictionary<Integer, String> toRomanDictionary() {
 			

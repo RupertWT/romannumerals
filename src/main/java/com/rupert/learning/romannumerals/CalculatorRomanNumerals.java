@@ -2,33 +2,33 @@ package com.rupert.learning.romannumerals;
 
 public class CalculatorRomanNumerals {
 	
-	public int DECIMAL_INPUT_ONE = 0;
-	public int DECIMAL_INPUT_TWO = 0;
-	public String OPERATOR = "";
+	public int decimal_input_one = 0;
+	public int decimal_input_two = 0;
+	public String operator = "";
 	
 	public String calculator(String romanNumeralInputOne, String romanNumeralInputTwo, String operator) {
 		
-		DECIMAL_INPUT_ONE = convertToDecimalNumber(romanNumeralInputOne);
-		DECIMAL_INPUT_TWO = convertToDecimalNumber(romanNumeralInputTwo);
-		OPERATOR = operator;
+		decimal_input_one = convertToDecimalNumber(romanNumeralInputOne);
+		decimal_input_two = convertToDecimalNumber(romanNumeralInputTwo);
+		this.operator = operator;
 		
-		checkForExceptions(DECIMAL_INPUT_ONE, "first input");
-		checkForExceptions(DECIMAL_INPUT_TWO, "second input");
+		checkForExceptions(decimal_input_one, "first input");
+		checkForExceptions(decimal_input_two, "second input");
 			
 		int answer = 0;	
 				
-		switch(OPERATOR) {
+		switch(operator) {
 			case "-":
-				answer = DECIMAL_INPUT_ONE - DECIMAL_INPUT_TWO;
+				answer = decimal_input_one - decimal_input_two;
 				break;
 			case "*":
-				answer = DECIMAL_INPUT_ONE * DECIMAL_INPUT_TWO;
+				answer = decimal_input_one * decimal_input_two;
 				break;
 			case "/":
-				answer = DECIMAL_INPUT_ONE / DECIMAL_INPUT_TWO;
+				answer = decimal_input_one / decimal_input_two;
 				break;
 			default:
-				answer = DECIMAL_INPUT_ONE + DECIMAL_INPUT_TWO;
+				answer = decimal_input_one + decimal_input_two;
 		}		
 		
 		checkForExceptions(answer, "answer");
@@ -56,7 +56,7 @@ public class CalculatorRomanNumerals {
 			throw new IllegalArgumentException("The " + description + " cannot be > 3000;");
 		}
 		
-		if (OPERATOR.equals("/") && (( ( (float)DECIMAL_INPUT_ONE / (float)DECIMAL_INPUT_TWO) % 1) != 0)) {
+		if (operator.equals("/") && (( ( (float)decimal_input_one / (float)decimal_input_two) % 1) != 0)) {
 			throw new IllegalArgumentException("The answer must be a whole number;");
 		}
 
