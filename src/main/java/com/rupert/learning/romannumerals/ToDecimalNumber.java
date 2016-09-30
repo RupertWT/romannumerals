@@ -32,7 +32,7 @@ public class ToDecimalNumber {
     }
 
 	private static boolean lastCharacterInRomanNumeralsString(String romanNumerals, int i) {
-		return i >= romanNumerals.length()-1;
+		return i == romanNumerals.length()-1;
 	}
 	
 }
