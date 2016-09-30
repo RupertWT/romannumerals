@@ -1,9 +1,7 @@
 package com.rupert.learning.romannumerals;
 
 import java.util.Dictionary;
-import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.LinkedHashMap;
 
 public class RomanNumeralsDictionary {
 	
