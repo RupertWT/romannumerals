@@ -4,6 +4,14 @@ public class ToDecimalNumber {
 	
 	public static int toDecimalNumberTransformer( String romanNumerals ) {
 		
+		if (romanNumerals == null) {
+			throw new IllegalArgumentException("NULL String not allowed;");
+		}
+		
+		if (romanNumerals.equals("")) {
+			throw new IllegalArgumentException("EMPTY String not allowed;");
+		}
+		
 		int resultInDecimals = 0;
 				
     	for (int i = 0; i < romanNumerals.length(); i++) {

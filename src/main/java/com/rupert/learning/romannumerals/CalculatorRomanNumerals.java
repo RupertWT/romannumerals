@@ -2,40 +2,41 @@ package com.rupert.learning.romannumerals;
 
 public class CalculatorRomanNumerals {
 	
-	public int decimal_input_one = 0;
-	public int decimal_input_two = 0;
-	public String operator = "";
-	
 	public String calculator(String romanNumeralInputOne, String romanNumeralInputTwo, String operator) {
 		
-		decimal_input_one = convertToDecimalNumber(romanNumeralInputOne);
-		decimal_input_two = convertToDecimalNumber(romanNumeralInputTwo);
-		this.operator = operator;
+		int decimalInputOne = convertToDecimalNumber(romanNumeralInputOne);
+		int decimalInputTwo = convertToDecimalNumber(romanNumeralInputTwo);
 		
-		checkForExceptions(decimal_input_one, "first input");
-		checkForExceptions(decimal_input_two, "second input");
+		checkForExceptions(decimalInputOne, "first input");
+		checkForExceptions(decimalInputTwo, "second input");
 			
-		int answer = 0;	
-				
-		switch(operator) {
-			case "-":
-				answer = decimal_input_one - decimal_input_two;
-				break;
-			case "*":
-				answer = decimal_input_one * decimal_input_two;
-				break;
-			case "/":
-				answer = decimal_input_one / decimal_input_two;
-				break;
-			default:
-				answer = decimal_input_one + decimal_input_two;
-		}		
+		int answer = calculate(operator, decimalInputOne, decimalInputTwo);		
 		
 		checkForExceptions(answer, "answer");
 		return convertToRomanNumerals(answer);
 	
 	}
-	
+
+	private int calculate(String operator, int decimalInputOne, int decimalInputTwo) {
+		int answer = 0;	
+				
+		switch(operator) {
+			case "-":
+				answer = decimalInputOne - decimalInputTwo;
+				break;
+			case "*":
+				answer = decimalInputOne * decimalInputTwo;
+				break;
+			case "/":
+				checkForNonWholeNumbesException(operator, decimalInputOne, decimalInputTwo);
+				answer = decimalInputOne / decimalInputTwo;
+				break;
+			default:
+				answer = decimalInputOne + decimalInputTwo;
+		}
+		return answer;
+	}
+
 	private String convertToRomanNumerals(int decimalNumber) {
 		return ToRomanNumerals.toRomanNumeralsTransformer(decimalNumber);
 	}
@@ -55,11 +56,12 @@ public class CalculatorRomanNumerals {
 		if (valueToBeChecked > 3000) {
 			throw new IllegalArgumentException("The " + description + " cannot be > 3000;");
 		}
-		
-		if (operator.equals("/") && (( ( (float)decimal_input_one / (float)decimal_input_two) % 1) != 0)) {
-			throw new IllegalArgumentException("The answer must be a whole number;");
-		}
 
 	}
 	
+	private void checkForNonWholeNumbesException(String operator, int decimalInputOne, int decimalInputTwo) {
+		if (operator.equals("/") && (( ( (float)decimalInputOne / (float)decimalInputTwo) % 1) != 0)) {
+			throw new IllegalArgumentException("The answer must be a whole number;");
+		}
+	}
 }

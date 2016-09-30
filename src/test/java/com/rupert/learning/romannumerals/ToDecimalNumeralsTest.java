@@ -2,9 +2,14 @@ package com.rupert.learning.romannumerals;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class ToDecimalNumeralsTest {
+	
+	@Rule
+	public ExpectedException thrown= ExpectedException.none();
 	
 //	fromRomanNumerals frn = new fromRomanNumerals();
   
@@ -97,8 +102,24 @@ public class ToDecimalNumeralsTest {
     }
 	
 	@Test
-    public void MCMXCIV_Returns_Three_Thousand_Nine_Hundred_And_Ninety_Nine() {
-        assertEquals(3999, ToDecimalNumber.toDecimalNumberTransformer("MMMCMXCIX"));   
-    }
+	public void null_String_Throws_Exception() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("NULL String not allowed;");
+		ToDecimalNumber.toDecimalNumberTransformer(null);
+	}
+	
+	@Test
+	public void empty_String_Throws_Exception() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("EMPTY String not allowed;");
+		ToDecimalNumber.toDecimalNumberTransformer("");
+	}
+	
+	@Ignore
+	public void invalid_Characters_Throw_Exception() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Only the following characters are valid: IVXLCDM;");
+		ToDecimalNumber.toDecimalNumberTransformer("Z");
+	}
 	
 }
