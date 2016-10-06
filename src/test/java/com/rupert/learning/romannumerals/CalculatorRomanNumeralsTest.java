@@ -49,9 +49,16 @@ public class CalculatorRomanNumeralsTest {
 //	Exceptions
 	
 	@Test
-	public void Input_One_Less_Than_0_Throw_Exception() {
+	public void Input_One_Null_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
-		thrown.expectMessage("The first input cannot be <= 0 or empty;");
+		thrown.expectMessage("The first input cannot be NULL;");
+		calc.calculator(null,"III","+");
+	}
+	
+	@Test
+	public void Input_One_Empty_Throw_Exception() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("The first input cannot be EMPTY;");
 		calc.calculator("","III","+");
 	}
 	
@@ -63,10 +70,17 @@ public class CalculatorRomanNumeralsTest {
 	}
 	
 	@Test
-	public void Input_Two_Less_Than_0_Throw_Exception() {
+	public void Input_Two_Null_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
-		thrown.expectMessage("The second input cannot be <= 0 or empty;");
-		calc.calculator("I","","+");
+		thrown.expectMessage("The second input cannot be NULL;");
+		calc.calculator("I",null,"+");
+	}
+	
+	@Test
+	public void Input_Two_Empty_Throw_Exception() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("The second input cannot be EMPTY;");
+		calc.calculator("II","","+");
 	}
 	
 	@Test
@@ -79,7 +93,7 @@ public class CalculatorRomanNumeralsTest {
 	@Test
 	public void Answer_Less_Than_0_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
-		thrown.expectMessage("The answer cannot be <= 0 or empty;");
+		thrown.expectMessage("The answer cannot be <= 0;");
 		calc.calculator("I","III","-");
 	}
 	
@@ -95,6 +109,13 @@ public class CalculatorRomanNumeralsTest {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The answer must be a whole number;");
 		calc.calculator("XIII","III","/");
+	}
+	
+	@Test
+	public void Invalid_Operator_Throw_Exception() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Invalid operator;");
+		calc.calculator("XIII","III",".");
 	}
 
 	

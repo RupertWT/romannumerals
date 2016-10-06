@@ -4,15 +4,18 @@ public class CalculatorRomanNumerals {
 	
 	public String calculator(String romanNumeralInputOne, String romanNumeralInputTwo, String operator) {
 		
+		checkForInputStringExceptions(romanNumeralInputOne, "first input");
+		checkForInputStringExceptions(romanNumeralInputTwo, "second input");
+		
 		int decimalInputOne = convertToDecimalNumber(romanNumeralInputOne);
 		int decimalInputTwo = convertToDecimalNumber(romanNumeralInputTwo);
 		
-		checkForExceptions(decimalInputOne, "first input");
-		checkForExceptions(decimalInputTwo, "second input");
+		checkForDecimalExceptions(decimalInputOne, "first input");
+		checkForDecimalExceptions(decimalInputTwo, "second input");
 			
 		int answer = calculate(operator, decimalInputOne, decimalInputTwo);		
 		
-		checkForExceptions(answer, "answer");
+		checkForDecimalExceptions(answer, "answer");
 		return convertToRomanNumerals(answer);
 	
 	}
@@ -31,8 +34,11 @@ public class CalculatorRomanNumerals {
 				checkForNonWholeNumbesException(operator, decimalInputOne, decimalInputTwo);
 				answer = decimalInputOne / decimalInputTwo;
 				break;
+			case "+":
+				answer = decimalInputOne + decimalInputTwo;	
+				break;
 			default:
-				answer = decimalInputOne + decimalInputTwo;
+				throw new IllegalArgumentException("Invalid operator;");
 		}
 		return answer;
 	}
@@ -47,10 +53,22 @@ public class CalculatorRomanNumerals {
 	}
 
 	
-	private void checkForExceptions(int valueToBeChecked, String description) {
+	private void checkForInputStringExceptions(String stringRomanInput, String description) {
+		
+		if (stringRomanInput == null) {
+			throw new IllegalArgumentException("The " + description + " cannot be NULL;");
+		}
+		
+		if (stringRomanInput.equals("")) {
+			throw new IllegalArgumentException("The " + description + " cannot be EMPTY;");
+		}
+		
+	}
+	
+	private void checkForDecimalExceptions(int valueToBeChecked, String description) {
 		
 		if (valueToBeChecked <= 0) {
-			throw new IllegalArgumentException("The " + description + " cannot be <= 0 or empty;");
+			throw new IllegalArgumentException("The " + description + " cannot be <= 0;");
 		}
 		
 		if (valueToBeChecked > 3000) {
