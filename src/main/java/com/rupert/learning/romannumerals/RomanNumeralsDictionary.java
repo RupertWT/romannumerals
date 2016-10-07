@@ -8,7 +8,6 @@ public class RomanNumeralsDictionary {
 	public static String decimalToRoman (int i) {
 		return toRomanDictionary().get(i);
 	}
-
 	
 	public static int romanToDecimal (String s) {
 		return toDecimalDictionary().get(s);
