@@ -2,7 +2,7 @@ package com.rupert.learning.romannumerals;
 
 public class ToDecimalNumber {
 	
-	public static int toDecimalNumberTransformer( String romanNumerals ) {
+	public int toDecimalNumberTransformer( String romanNumerals ) {
 		
 		if (romanNumerals == null) {
 			throw new IllegalArgumentException("NULL String not allowed;");
@@ -39,7 +39,7 @@ public class ToDecimalNumber {
     	
     }
 
-	private static boolean isLastCharacterInRomanNumeralsString(String romanNumerals, int i) {
+	private boolean isLastCharacterInRomanNumeralsString(String romanNumerals, int i) {
 		return i == romanNumerals.length()-1;
 	}
 	
