@@ -49,7 +49,8 @@ public class CalculatorRomanNumerals {
 
 	
 	private int convertToDecimalNumber(String romanNumeral) {
-		return ToDecimalNumber.toDecimalNumberTransformer(romanNumeral);
+		ToDecimalNumber toDec = new ToDecimalNumber();
+		return toDec.toDecimalNumberTransformer(romanNumeral);
 	}
 
 	
