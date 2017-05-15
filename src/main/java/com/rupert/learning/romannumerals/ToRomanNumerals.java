@@ -2,7 +2,7 @@ package com.rupert.learning.romannumerals;
 
 public class ToRomanNumerals {
 	
-	public static String toRomanNumeralsTransformer( int decimalNumbers ) {
+	public String toRomanNumeralsTransformer( int decimalNumbers ) {
 		
 		String resultInRomanNumerals = "";
 

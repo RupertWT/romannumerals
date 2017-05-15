@@ -44,7 +44,8 @@ public class CalculatorRomanNumerals {
 	}
 
 	private String convertToRomanNumerals(int decimalNumber) {
-		return ToRomanNumerals.toRomanNumeralsTransformer(decimalNumber);
+		ToRomanNumerals toRom = new ToRomanNumerals();
+		return toRom.toRomanNumeralsTransformer(decimalNumber);
 	}
 
 	
