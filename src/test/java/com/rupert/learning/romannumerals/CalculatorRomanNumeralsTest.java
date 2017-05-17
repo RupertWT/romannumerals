@@ -97,6 +97,13 @@ public class CalculatorRomanNumeralsTest {
 		calc.calculator("I","III","-");
 	}
 	
+	@SuppressWarnings("static-access")
+	@Test
+	public void Answer_Between_0_And_3000_Dont_Throw_Exception() {
+		thrown.none();
+		calc.calculator("III","I","-");
+	}
+	
 	@Test
 	public void Answer_More_Than_3000_Throw_Exception() {
 		thrown.expect(IllegalArgumentException.class);
