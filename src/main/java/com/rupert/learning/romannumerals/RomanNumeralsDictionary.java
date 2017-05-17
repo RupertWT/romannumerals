@@ -15,15 +15,14 @@ public class RomanNumeralsDictionary {
 	
 	private static Dictionary<String, Integer> toDecimalDictionary() {
 		
-		Dictionary<String, Integer> toDecimalDictionary = new Hashtable<String, Integer>();
-	   
-		toDecimalDictionary.put("I", 1);
-		toDecimalDictionary.put("V", 5);
-		toDecimalDictionary.put("X", 10);
-		toDecimalDictionary.put("L", 50);
-		toDecimalDictionary.put("C", 100);
-		toDecimalDictionary.put("D", 500);
-		toDecimalDictionary.put("M", 1000);
+		Dictionary<String, Integer> toDecimalDictionary = new Hashtable<String, Integer>();  
+			toDecimalDictionary.put("I", 1);
+			toDecimalDictionary.put("V", 5);
+			toDecimalDictionary.put("X", 10);
+			toDecimalDictionary.put("L", 50);
+			toDecimalDictionary.put("C", 100);
+			toDecimalDictionary.put("D", 500);
+			toDecimalDictionary.put("M", 1000);
 		
 	    return toDecimalDictionary;
 	  
@@ -32,7 +31,6 @@ public class RomanNumeralsDictionary {
 	private static Dictionary<Integer, String> toRomanDictionary() {
 			
 		Dictionary<Integer,String> toRomanDictionary = new Hashtable<Integer, String>();
-		   
 			toRomanDictionary.put(1, "I");
 			toRomanDictionary.put(4, "IV");
 			toRomanDictionary.put(5, "V");
@@ -47,7 +45,7 @@ public class RomanNumeralsDictionary {
 			toRomanDictionary.put(900, "CM");
 			toRomanDictionary.put(1000, "M");
 			
-			return toRomanDictionary;
+		return toRomanDictionary;
 		  
 	}	
 	
