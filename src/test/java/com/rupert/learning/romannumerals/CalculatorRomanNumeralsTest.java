@@ -20,6 +20,11 @@ public class CalculatorRomanNumeralsTest {
         assertEquals("IV", calc.calculator("I","III","+"));   
     }
 	
+	@Test
+    public void M_plus_MM_equals_MMM() {
+        assertEquals("MMM", calc.calculator("M","MM","+"));   
+    }
+	
 //	Subtractions
 	
 	@Test
@@ -98,9 +103,10 @@ public class CalculatorRomanNumeralsTest {
 	}
 	
 	@Test
-	public void Answer_Between_0_And_3000_Dont_Throw_Exception() {
-		ExpectedException.none();
-		calc.calculator("III","I","-");
+	public void Answer_Not_0_Throw_Exception() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("The answer cannot be <= 0;");
+		calc.calculator("I","I","-");
 	}
 	
 	@Test
