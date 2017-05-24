@@ -31,7 +31,7 @@ public class CalculatorRomanNumerals {
 				answer = decimalInputOne * decimalInputTwo;
 				break;
 			case "/":
-				checkForNonWholeNumbesException(operator, decimalInputOne, decimalInputTwo);
+				checkForNonWholeNumbesException(decimalInputOne, decimalInputTwo);
 				answer = decimalInputOne / decimalInputTwo;
 				break;
 			case "+":
@@ -79,8 +79,8 @@ public class CalculatorRomanNumerals {
 
 	}
 	
-	private void checkForNonWholeNumbesException(String operator, int decimalInputOne, int decimalInputTwo) {
-		if (operator.equals("/") && (( ( (float)decimalInputOne / (float)decimalInputTwo) % 1) != 0)) {
+	private void checkForNonWholeNumbesException(int decimalInputOne, int decimalInputTwo) {
+		if ( ( (float)decimalInputOne / (float)decimalInputTwo ) % 1  != 0) {
 			throw new IllegalArgumentException("The answer must be a whole number;");
 		}
 	}
